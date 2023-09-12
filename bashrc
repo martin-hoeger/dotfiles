@@ -127,7 +127,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
 }
 
-export PS1="\n$pur\w$blu\$(parse_git_branch)$grn $ $clr"
+export PS1="\n$ylw$(hostname) $pur\w$blu\$(parse_git_branch)$grn $ $clr"
 
 function git_init() {
     if [ -z "$1" ]; then
