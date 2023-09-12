@@ -145,7 +145,7 @@ function git_init() {
 clear
 
 printf "\n"
-printf "   %s\n" "HOSTNAME: $(hostname -f)"
+printf "   %s\n" "HOSTNAME: $(hostname)"
 printf "   %s\n" "USER: $(echo $USER)"
 printf "   %s\n" "DATE: $(date)"
 printf "   %s\n" "UPTIME: $(uptime -p)"
