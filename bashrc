@@ -24,6 +24,9 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
+# Create a backup dir for vim
+mkdir -p ~/.vim_backup
+
 #######################################################
 # EXPORTS
 #######################################################
