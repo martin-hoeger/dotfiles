@@ -146,7 +146,6 @@ clear
 
 printf "\n"
 printf "   %s\n" "HOSTNAME: $(hostname -f)"
-printf "\n"
 printf "   %s\n" "USER: $(echo $USER)"
 printf "   %s\n" "DATE: $(date)"
 printf "   %s\n" "UPTIME: $(uptime -p)"
