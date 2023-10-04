@@ -1,6 +1,7 @@
 #!/bin/bash
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-alias factory="~/Dev/FetView/server-factory-dev/bin/factory.sh"
+if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 set -o vi
 
@@ -88,6 +89,9 @@ alias ..='cd ..;pwd'
 alias ...='cd ../..;pwd'
 alias ....='cd ../../..;pwd'
 
+alias factory="~/Dev/FetView/server-factory-dev/bin/factory.sh"
+alias docker="sudo docker"
+alias df="df -h"
 alias c='clear'
 alias h='history'
 alias rmf='rm -rf'
@@ -105,6 +109,10 @@ alias sep='cal -m 09'
 alias oct='cal -m 10'
 alias nov='cal -m 11'
 alias dec='cal -m 12'
+
+if [[ -f /opt/server-cli/fetview-cli.sh ]]; then
+    alias fv="/opt/server-cli/fetview-cli.sh"
+fi
 
 blk='\[\033[01;30m\]'   # Black
 red='\[\033[01;31m\]'   # Red
