@@ -155,11 +155,19 @@ function git_init() {
 }
 
 clear
+echo
 
-printf "\n"
 printf "   %s\n" "HOSTNAME: $(hostname)"
+lsb_release -a | grep "Amazon" &> /dev/null
+if [ "$?" == "0" ]; then
+    printf "   %s\n" "EC2 ID: $(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)"
+    printf "   %s\n" "REGION: $(wget -q -O - http://169.254.169.254/latest/meta-data/placement/region)"
+fi
 printf "   %s\n" "USER: $(echo $USER)"
 printf "   %s\n" "DATE: $(date)"
 printf "   %s\n" "UPTIME: $(uptime -p)"
 printf "   %s\n" "KERNEL: $(uname -rms)"
 printf "   %s\n" "MEMORY: $(free -m -h | awk '/Mem/{print $3"/"$2}')"
+
+
+
